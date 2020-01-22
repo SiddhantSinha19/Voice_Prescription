@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Voice Prescription</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/style72.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="{{ url_for('index')}}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a class="active" href="{{ url_for('input')}}">Input</a>
+    </div>
+    <div class="content">
+      <p id="patientnameholder">{{ patient_name }}</p>
+      <p id="patientpathholder">{{ path }}</p>
+      <p id="textfilepathholder">{{ path_txt }}</p>
+      <p id="hindipathholder">{{ path_hindi }}</p>
+      <br>
+      <a href="{{ path }}" target=”_blank”>View Pdf</a>
+      <a href="{{ path }}"  download = "{{ download_name }}">Download PDF</a>
+
+      <br>
+      <br>
+      <a href="{{ path_hindi }}" target=”_blank”>View Pdf in Hindi</a>
+      <a href="{{ path_hindi }}"  download = "{{ download_name }}">Download PDF in Hindi</a>
+      <form action="{{ url_for('sendEmail') }}" id="email_form" method="post" onsubmit="myFunction()">
+        <input type="text" id="email_box" name="email_box"/>
+        <input type="text" id="email_patient_name" name="email_patient_name"/>
+        <input type="text" id="path_holder" name="path_holder"/>
+        <input type="text" id="hindi_path" name="hindi_path"/>
+        <input id="sub" type="submit" value="Send Email"/>
+      </form>
+
+      <form action="{{ url_for('sendWA') }}" id="wa_form" method="post" onsubmit="myFunction_wa()">
+        <input type="text" id="wa_box" name="wa_box"/>
+        <input type="text" id="wa_patient_name" name="wa_patient_name"/>
+        <input type="text" id="wa_path_holder" name="wa_path_holder"/> 
+        <input id="sub_wa" type="submit" value="Send Whatsapp"/>
+      </form>
+    </div>
+    
+    <script>
+      $(document).ready(function(){
+        $('#email_patient_name').hide();
+        $('#path_holder').hide();
+        $('#patientnameholder').hide();
+        $('#patientpathholder').hide();
+        $('#textfilepathholder').hide();
+        $('#wa_patient_name').hide();
+        $('#wa_path_holder').hide();
+        $('#hindipathholder').hide();
+        $('#hindi_path').hide();
+      });
+
+      function myFunction() {
+        var inp_email_patient_name = document.getElementById("email_patient_name");
+        inp_email_patient_name.value = document.getElementById("patientnameholder").innerHTML;
+
+        var inp_path_holder = document.getElementById("path_holder");
+        inp_path_holder.value = document.getElementById("patientpathholder").innerHTML;
+
+        var inp_hindi_path = document.getElementById("hindi_path");
+        inp_hindi_path.value = document.getElementById("hindipathholder").innerHTML;
+
+      }
+
+      function myFunction_wa() {
+        var inp_wa_patient_name = document.getElementById("wa_patient_name");
+        inp_wa_patient_name.value = document.getElementById("patientnameholder").innerHTML;
+
+        var inp_wa_path_holder = document.getElementById("wa_path_holder");
+        inp_wa_path_holder.value = document.getElementById("textfilepathholder").innerHTML;
+      }
+    </script>
+  </body>
+</html>

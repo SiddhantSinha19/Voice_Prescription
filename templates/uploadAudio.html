@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Voice Prescription</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/style72.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="{{ url_for('index')}}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a class="active" href="{{ url_for('input')}}">Input</a>
+    </div>
+    <div class="content2">
+        <form action="{{ url_for('getPDF') }}" id="formmy" method="post" onsubmit="myFunction()">
+          <br>
+          <label style="color: black; font-weight: bold; font-size: 24px;"> Patient Details </label>
+          <br>
+          <label style="color: black;"> Name <textarea class="small_width_css_class" id="whole_text_name" name="whole_text_name">{{ patient_name }}</textarea> </label>
+          <label style="color: black; margin-left: 40px;"> Age <textarea class="smallest_width_css_class" id="whole_text_age" name="whole_text_age">{{ patient_age }}</textarea> </label>
+          <label style="color: black; margin-left: 40px;"> Sex <textarea class="smallest_width_css_class" id="whole_text_sex" name="whole_text_sex">{{ patient_gender }}</textarea></label>
+          <br> <br>
+
+          <label style="color: black; font-weight: bold; font-size: 24px;"> Symptoms </label>
+          <textarea id="whole_text_symptoms" name="whole_text_symptoms">{{ patient_symptoms }}</textarea>
+          <br>
+          <br>
+          <label style="color: black; font-weight: bold; font-size: 24px;"> Diagnosis </label>
+          <textarea id="whole_text_diagnosis" name="whole_text_diagnosis">{{ patient_disease }}</textarea>
+          <br>
+          <br>
+          <label style="color: black; font-weight: bold; font-size: 24px;"> Prescriptions </label>
+          <textarea id="whole_text_medicine" name="whole_text_medicine">{{ prescriptions }}</textarea>
+          <br>
+          <br>
+          <label style="color: black; font-weight: bold; font-size: 24px;"> Advice </label>
+          <textarea id="whole_text_advice" name="whole_text_advice">{{ patient_advice }}</textarea>
+          <input type="text" id="inp_name" name="inp_name"/> 
+          <input type="text" id="inp_age" name="inp_age"/>
+          <input type="text" id="inp_sex" name="inp_sex"/> 
+          <input type="text" id="inp_symptoms" name="inp_symptoms"/> 
+          <input type="text" id="inp_diagnosis" name="inp_diagnosis"/> 
+          <input type="text" id="inp_medicine" name="inp_medicine"/> 
+          <input type="text" id="inp_advice" name="inp_advice"/> 
+          <input id="sub" type="submit" value="Get PDF"/>
+        </form> 
+    </div>
+    <script>
+    $(document).ready(function(){
+        $('#inp_name').hide();
+        $('#inp_age').hide();
+        $('#inp_sex').hide();
+        $('#inp_symptoms').hide();
+        $('#inp_diagnosis').hide();
+        $('#inp_medicine').hide();
+        $('#inp_advice').hide();
+      });
+    function myFunction() {
+      var text_name = document.getElementById("whole_text_name").value;
+      var inp_name = document.getElementById("inp_name");
+      inp_name.value = text_name;
+
+      var text_age = document.getElementById("whole_text_age").value;
+      var inp_age = document.getElementById("inp_age");
+      inp_age.value = text_age;
+
+      var text_sex = document.getElementById("whole_text_sex").value;
+      var inp_sex = document.getElementById("inp_sex");
+      inp_sex.value = text_sex;
+
+      var text_symptoms = document.getElementById("whole_text_symptoms").value;
+      var inp_symptoms = document.getElementById("inp_symptoms");
+      inp_symptoms.value = text_symptoms;
+
+      var text_diagnosis = document.getElementById("whole_text_diagnosis").value;
+      var inp_diagnosis = document.getElementById("inp_diagnosis");
+      inp_diagnosis.value = text_diagnosis;
+
+      var text_medicine = document.getElementById("whole_text_medicine").value;
+      var inp_medicine = document.getElementById("inp_medicine");
+      inp_medicine.value = text_medicine;
+
+      var text_advice = document.getElementById("whole_text_advice").value;
+      var inp_advice = document.getElementById("inp_advice");
+      inp_advice.value = text_advice;
+    }
+    </script>
+  </body>
+</html>
