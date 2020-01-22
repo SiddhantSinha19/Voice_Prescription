@@ -9,14 +9,21 @@ https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js
 Speech to text conversion was done using google translator via a python library - speech_recognition
 
 r = sr.Recognizer()
+
 path_my = "/Users/siddhantsinha19/Downloads/"+filename
+
 AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), path_my)
+
 with sr.AudioFile(AUDIO_FILE) as source:     # mention source it will be either Microphone or audio files.
+
   audio = r.record(source)
+  
   try:
+  
     text = r.recognize_google(audio)    # use recognizer to convert our audio into text part.
                 
   except:
+  
     text="Sorry could not recognize your voice" 
 
 The above code converts audio and stores it a variable text
