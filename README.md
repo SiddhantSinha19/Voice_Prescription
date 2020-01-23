@@ -47,5 +47,6 @@ The implementation of email is straightforward and is done using a python librar
 
 Further the front end is created using HTML,CSS, and Javascript. And for the backend we have used flask.
 
-For any queries, please contact - sid.ronaldo1904@gmail.com
+For any queries, please contact - Shivangi Shukla - shivangishukla167@gmail.com or 
+Siddhant Sinha - sid.ronaldo1904@gmail.com
 Also, please mention the github link/ cite the source if you are using any of our work.
