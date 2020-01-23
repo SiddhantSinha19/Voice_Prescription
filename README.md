@@ -30,10 +30,15 @@ The above code converts audio and stores it a variable text
 
 After the text is stored.
 Various functions extract required details from the entire text corpus
+
 -extractPatientDetails() - extracts name, age and sex of the patient
+
 -extract_symps() - extracts the symptoms complained by the patient
+
 -get_disease() - extract the disease/diagnosis said by the doctor 
+
 -extract_medicines() - extracts the prescription given
+
 -extract_advice() - extracts advice given by the doctor
 
 After the extration process is completed, each of them is sent to a <textarea> tag in html and doctor and edit anything over there
