@@ -51,7 +51,3 @@ The implentation of whatsapp is done using twilio. API key needs to be created a
 The implementation of email is straightforward and is done using a python library called email. It's implementation can be found in the function sendEmailfun().
 
 Further the front end is created using HTML,CSS, and Javascript. And for the backend we have used flask.
-
-For any queries, please contact - Shivangi Shukla - shivangishukla167@gmail.com or 
-Siddhant Sinha - sid.ronaldo1904@gmail.com
-Also, please mention the github link/ cite the source if you are using any of our work.
