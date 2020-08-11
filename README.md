@@ -1,5 +1,5 @@
 Project Name: Voice Prescription  <br>
-Author Name: Siddhant Sinha <br>
+Author Name: Siddhant Sinha [and others] <br>
 Project Date: January 2020 <br>
 
 OVERVIEW
